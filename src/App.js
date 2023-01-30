@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import './index.css'
 
-import { About, Blog, Footer, Header, Navbar, Contact } from './components/index.js';
+import { About, Events, Footer, Header, Navbar, Contact } from './components/index.js';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         </div>
             <About />
             <Contact />
-            <Blog />
+            <Events />
             <Footer />
         </div>
     </div>
