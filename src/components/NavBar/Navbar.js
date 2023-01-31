@@ -1,10 +1,24 @@
 import { React, useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 import "./Navbar.css"
 
 // BEM Naming used
 
+// TODO: Eventually replace a tags with actual <Link> using react router dom
+
 const logo = "logo holder";
+
+const Links = () => {
+  return(
+    <>
+      <p><Link to="/">Home</Link></p>
+      <p><Link to="/about">About</Link></p>
+      <p><Link to="/events">Events</Link></p>
+      <p><Link to="/contact">Contact Us</Link></p>
+    </>
+  )
+}
 
 
 const Navbar = () => {
@@ -14,13 +28,12 @@ const Navbar = () => {
     <div className="pm__navbar">
       <div className="pm__navbar-links">
         <div className="pm__navbar-links_logo">
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="pm__navbar-links_container">
-          <p><a href="#home">Home</a></p>
-          <p><a href="#about">About</a></p>
-          <p><a href="#events">Events</a></p>
-          <p><a href="#contact">Contact Us</a></p>
+          <Links />
         </div>
       </div>
       <div className="pm__navbar-menu">
@@ -32,10 +45,7 @@ const Navbar = () => {
         { toggleMenu && (
           <div className="pm__navbar-menu_container scale-up-center">
             <div className="pm__navbar-menu_container-links">
-              <p><a href="#home">Home</a></p>
-              <p><a href="#about">About</a></p>
-              <p><a href="#events">Events</a></p>
-              <p><a href="#contact">Contact Us</a></p>
+              <Links />
             </div>
           </div>
         )
